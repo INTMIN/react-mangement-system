@@ -28,11 +28,11 @@ class SiderMune extends Component {
           <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
             <Menu.Item key="1">
             <Icon type="customer-service" theme="outlined" />
-              <span>Option 1</span>
+              <span>音乐</span>
             </Menu.Item>
             <Menu.Item key="2">
-              <Icon type="desktop" />
-              <span>Option 2</span>
+            <Icon type="picture" theme="outlined" />
+              <span>图片</span>
             </Menu.Item>
             <SubMenu
               key="sub1"
@@ -51,15 +51,15 @@ class SiderMune extends Component {
             </SubMenu>
             <Menu.Item key="9">
               <Icon type="file" />
-              <span>File</span>
+              <span>上传文件</span>
             </Menu.Item>
           </Menu>
         </Sider>
         <Layout>
           <Content style={{ margin: '0 16px' }}>
             <Breadcrumb style={{ margin: '16px 0' }}>
-              <Breadcrumb.Item>User</Breadcrumb.Item>
-              <Breadcrumb.Item>min</Breadcrumb.Item>
+              <Breadcrumb.Item>类别</Breadcrumb.Item>
+              <Breadcrumb.Item>图片</Breadcrumb.Item>
             </Breadcrumb>
             <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
               欢迎min

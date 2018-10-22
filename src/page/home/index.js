@@ -28,7 +28,8 @@ class AppIcon extends Component {
         </Menu.Item>
         <SubMenu  style={{float: 'right'}} title={<span className="submenu-title-wrapper"><Icon type="github" theme="outlined"/>欢迎管理员</span>}>
           <MenuItemGroup>
-            <Menu.Item key="setting:1">退出</Menu.Item>
+            <Menu.Item key="setting:1">设置</Menu.Item>
+            <Menu.Item key="setting:2">退出</Menu.Item>
           </MenuItemGroup>
         </SubMenu>
       </Menu>
