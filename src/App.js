@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-
+import Home from './page/home';
 
 class App extends Component {
   render() {
     return (
       <div>
-        <header>
-          
+        
+          <Home />
           hello react
           
-        </header>
+        
       </div>
     );
   }
