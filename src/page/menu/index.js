@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
+import Avatar from '../uplode';
+
 import '../../App.css';
 
 
@@ -49,10 +51,12 @@ class SiderMune extends Component {
               <Menu.Item key="6">Team 1</Menu.Item>
               <Menu.Item key="8">Team 2</Menu.Item>
             </SubMenu>
-            <Menu.Item key="9">
-              <Icon type="file" />
-              <span>上传文件</span>
-            </Menu.Item>
+            <SubMenu
+              key="sub3"
+              title={<span><Icon type="file" /><span>上传文件</span></span>}
+            >
+              <Avatar/>
+            </SubMenu>
           </Menu>
         </Sider>
         <Layout>
