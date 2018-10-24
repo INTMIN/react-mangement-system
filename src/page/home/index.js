@@ -1,21 +1,20 @@
 import React, {Component} from 'react';
 import { Menu, Icon } from 'antd';
+import { Link } from 'react-router-dom';
 
 
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 
 class AppIcon extends Component {
-  state = {
-    login: 'true',
+  constructor(props){
+    super(props);
+    this.state = {
+      login: 'true',
+    }
+  
   }
-
-  handleClick = (e) => {
-    console.log('click ', e);
-    this.setState({
-      login: e.key
-    });
-  }
+  
 
   render() {
       return (
@@ -24,9 +23,12 @@ class AppIcon extends Component {
           selectedKeys={[this.state.current]}
           mode="horizontal"
         >
-          <Menu.Item key="app">
-            <Icon type="github" theme="outlined" />MIN
+        
+            <Menu.Item key="app">
+            <Link to='/login'><Icon type="github" theme="outlined" />MIN</Link>
           </Menu.Item>
+        
+          
           <SubMenu  style={{float: 'right'}} title={<span className="submenu-title-wrapper"><Icon type="github" theme="outlined"/>欢迎管理员</span>}>
             <MenuItemGroup>
               <Menu.Item key="setting:1">设置</Menu.Item>
@@ -37,6 +39,12 @@ class AppIcon extends Component {
       );
     }
     
+  handleClick = (e) => {
+    console.log('click ', e);
+    this.setState({
+      login: e.key
+    });
+  }
   }
 
 export default AppIcon;
