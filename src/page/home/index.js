@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import { Menu, Icon } from 'antd';
 import { Link } from 'react-router-dom';
+import SiderMune from '../menu';
 
 
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 
-class AppIcon extends Component {
+class Home extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -18,6 +19,7 @@ class AppIcon extends Component {
 
   render() {
       return (
+        <div>
         <Menu
           onClick={this.handleClick}
           selectedKeys={[this.state.current]}
@@ -36,6 +38,8 @@ class AppIcon extends Component {
             </MenuItemGroup>
           </SubMenu>
         </Menu>
+        <SiderMune />
+        </div>
       );
     }
     
@@ -47,4 +51,4 @@ class AppIcon extends Component {
   }
   }
 
-export default AppIcon;
+export default Home;

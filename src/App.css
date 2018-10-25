@@ -8,4 +8,19 @@
   height: 128px;
   margin: 0 auto;
 }
-
+.ant-form-horizontal{
+  display: block;
+  padding: 20px;
+  max-width: 300px;
+  text-align: center;
+  margin: 100px auto;
+}
+#components-form-demo-normal-login .login-form {
+  max-width: 300px;
+}
+#components-form-demo-normal-login .login-form-forgot {
+  float: right;
+}
+#components-form-demo-normal-login .login-form-button {
+  width: 100%;
+}
