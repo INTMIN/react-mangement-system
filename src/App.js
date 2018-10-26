@@ -4,6 +4,7 @@ import Login from './page/login';
 import { Provider } from 'react-redux';
 import store from './store';
 import Picture from './page/picture';
+import Avatar from './page/uplode';
 import { BrowserRouter, Route} from 'react-router-dom';
 
 
@@ -17,6 +18,7 @@ class App extends Component {
           <Route exact path='/' component={Home}></Route>
           <Route path='/login' component={Login}></Route>
           <Route path='/picture' component={Picture}></Route>
+          <Route path='/avatar' component={Avatar}></Route>
           {/* both /roster and /roster/:number begin with /roster */}
         </div>
           

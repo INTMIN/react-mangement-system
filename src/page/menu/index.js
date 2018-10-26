@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
-import Avatar from '../uplode';
 import {Link} from 'react-router-dom';
-
 import '../../App.css';
 
 
@@ -30,8 +28,8 @@ class SiderMune extends Component {
           <div className="logo" />
           <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
             <Menu.Item key="1">
-            <Icon type="customer-service" theme="outlined" />
-              <span>音乐</span>
+            <Icon type="file" theme="outlined" />
+              <span>文档</span>
             </Menu.Item>
             <Menu.Item key="2">
             <Link to='/picture'/>
@@ -54,12 +52,10 @@ class SiderMune extends Component {
               <Menu.Item key="6">Team 1</Menu.Item>
               <Menu.Item key="8">Team 2</Menu.Item>
             </SubMenu>
-            <SubMenu
-              key="sub3"
-              title={<span><Icon type="file" /><span>上传文件</span></span>}
-            >
-              <Avatar/>
-            </SubMenu>
+            <Menu.Item key="6">
+            <Link to='/avatar'/>
+              <span><Icon type="file" /><span>上传文件</span></span>
+            </Menu.Item>
           </Menu>
         </Sider>
         <Layout>
