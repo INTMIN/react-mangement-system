@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 import Avatar from '../uplode';
+import {Link} from 'react-router-dom';
 
 import '../../App.css';
 
@@ -33,9 +34,11 @@ class SiderMune extends Component {
               <span>音乐</span>
             </Menu.Item>
             <Menu.Item key="2">
+            <Link to='/picture'/>
             <Icon type="picture" theme="outlined" />
               <span>图片</span>
             </Menu.Item>
+           
             <SubMenu
               key="sub1"
               title={<span><Icon type="user" /><span>User</span></span>}

@@ -3,6 +3,7 @@ import Home from './page/home';
 import Login from './page/login';
 import { Provider } from 'react-redux';
 import store from './store';
+import Picture from './page/picture';
 import { BrowserRouter, Route} from 'react-router-dom';
 
 
@@ -15,6 +16,7 @@ class App extends Component {
         <div>
           <Route exact path='/' component={Home}></Route>
           <Route path='/login' component={Login}></Route>
+          <Route path='/picture' component={Picture}></Route>
           {/* both /roster and /roster/:number begin with /roster */}
         </div>
           
