@@ -11,12 +11,9 @@ class Home extends Component {
   constructor(props){
     super(props);
     this.state = {
-      login: 'true',
+      login: '',
     }
-  
   }
-  
-
   render() {
       return (
         <div>
@@ -25,11 +22,9 @@ class Home extends Component {
           selectedKeys={[this.state.current]}
           mode="horizontal"
         >
-        
             <Menu.Item key="app">
-            <Link to='/login'><Icon type="github" theme="outlined" />MIN</Link>
+            <Link to='/'><Icon type="github" theme="outlined" />MIN</Link>
           </Menu.Item>
-        
           
           <SubMenu  style={{float: 'right'}} title={<span className="submenu-title-wrapper"><Icon type="github" theme="outlined"/>欢迎管理员</span>}>
             <MenuItemGroup>
@@ -37,18 +32,14 @@ class Home extends Component {
               <Menu.Item key="setting:2">退出</Menu.Item>
             </MenuItemGroup>
           </SubMenu>
+          <Menu.Item key="alipay" style={{float: 'right'}}>
+          <Link to='/login'><Icon type="user" theme="outlined" />登录</Link>
+        </Menu.Item>
         </Menu>
         <SiderMune />
         </div>
       );
-    }
-    
-  handleClick = (e) => {
-    console.log('click ', e);
-    this.setState({
-      login: e.key
-    });
   }
-  }
+}
 
 export default Home;
