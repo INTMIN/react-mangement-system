@@ -27,13 +27,15 @@ class SiderMune extends Component {
           <div className="logo" />
           <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
             <Menu.Item key="1">
-            <Icon type="file" theme="outlined" />
+              <Icon type="file" theme="outlined" />
               <span>文档</span>
             </Menu.Item>
+
             <Menu.Item key="2">
-            <Link to='./picture'>
-            <Icon type="picture" theme="outlined" />
-              <span>图片</span></Link>
+              <Link to='./picture'>
+                <Icon type="picture" theme="outlined" />
+                  <span>图片</span>
+                </Link>
             </Menu.Item>
             
             <SubMenu
@@ -44,6 +46,7 @@ class SiderMune extends Component {
               <Menu.Item key="4">Bill</Menu.Item>
               <Menu.Item key="5">Alex</Menu.Item>
             </SubMenu>
+
             <SubMenu
               key="sub2"
               title={<span><Icon type="team" /><span>Team</span></span>}
@@ -52,7 +55,7 @@ class SiderMune extends Component {
               <Menu.Item key="7">Team 2</Menu.Item>
             </SubMenu>
             <Menu.Item key="8">
-            <Link to='./picture'>
+            <Link to='./avatar'>
               <span><Icon type="file" /><span>上传文件</span></span></Link>
             </Menu.Item>
           </Menu>

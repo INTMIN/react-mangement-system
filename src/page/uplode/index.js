@@ -1,90 +1,39 @@
 import React, { Component } from 'react'
+import { Upload, Icon, message } from 'antd';
 import '../../App.css';
-import { Upload, Button, Icon, message } from 'antd';
-import reqwest from 'reqwest';
 
+const Dragger = Upload.Dragger;
+  
+  const props = {
+    name: 'file',
+    multiple: true,
+    action: '//jsonplaceholder.typicode.com/posts/',
+    onChange(info) {
+      const status = info.file.status;
+      if (status !== 'uploading') {
+        console.log(info.file, info.fileList);
+      }
+      if (status === 'done') {
+        message.success(`${info.file.name} file uploaded successfully.`);
+      } else if (status === 'error') {
+        message.error(`${info.file.name} file upload failed.`);
+      }
+    },
+  };
 class Avatar extends Component {
-  state = {
-    fileList: [],
-    uploading: false,
-  }
 
-  handleUpload = () => {
-    const { fileList } = this.state;
-    const formData = new FormData();
-    fileList.forEach((file) => {
-      formData.append('files[]', file);
-    });
-
-    this.setState({
-      uploading: true,
-    });
-
-    // You can use any AJAX library you like
-    reqwest({
-      url: '//jsonplaceholder.typicode.com/posts/',
-      method: 'post',
-      processData: false,
-      data: formData,
-      success: () => {
-        this.setState({
-          fileList: [],
-          uploading: false,
-        });
-        message.success('upload successfully.');
-      },
-      error: () => {
-        this.setState({
-          uploading: false,
-        });
-        message.error('upload failed.');
-      },
-    });
-  }
-
-  render() {
-    const { uploading } = this.state;
-    const props = {
-      action: '//jsonplaceholder.typicode.com/posts/',
-      onRemove: (file) => {
-        this.setState(({ fileList }) => {
-          const index = fileList.indexOf(file);
-          const newFileList = fileList.slice();
-          newFileList.splice(index, 1);
-          return {
-            fileList: newFileList,
-          };
-        });
-      },
-      beforeUpload: (file) => {
-        this.setState(({ fileList }) => ({
-          fileList: [...fileList, file],
-        }));
-        return false;
-      },
-      fileList: this.state.fileList,
-    };
-
-    return (
-      <div>
-        <Upload {...props}>
-          <Button>
-            <Icon type="upload" /> Select File
-          </Button>
-        </Upload>
-        <Button
-          className="upload-demo-start"
-          type="primary"
-          onClick={this.handleUpload}
-          disabled={this.state.fileList.length === 0}
-          loading={uploading}
-        >
-          {uploading ? 'Uploading' : 'Start Upload' }
-        </Button>
-      </div>
-    );
-  }
-}
-
+   render(){
+     return(
+      <Dragger {...props}>
+        <p className="ant-upload-drag-icon">
+          <Icon type="inbox" />
+        </p>
+        <p className="ant-upload-text">点击这里上传文件</p>
+        <p className="ant-upload-hint">你可以把文件拖到这里上传</p>
+    </Dragger>
+     )
+   }
+}   
+  
 
 export default Avatar;
