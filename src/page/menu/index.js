@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
-import { Layout, Menu, Breadcrumb, Icon } from 'antd';
-import {Link} from 'react-router-dom';
+import { Layout, Menu, Icon } from 'antd';
 import '../../App.css';
 
 
-const { Content, Footer, Sider } = Layout;
+const { Sider } = Layout;
 const SubMenu = Menu.SubMenu;
 
 class SiderMune extends Component {
@@ -19,7 +18,6 @@ class SiderMune extends Component {
 
   render() {
     return (
-      <Layout style={{ minHeight: '100vh' }}>
         <Sider
           collapsible
           collapsed={this.state.collapsed}
@@ -32,7 +30,7 @@ class SiderMune extends Component {
               <span>文档</span>
             </Menu.Item>
             <Menu.Item key="2">
-            <Link to='/picture'/>
+            
             <Icon type="picture" theme="outlined" />
               <span>图片</span>
             </Menu.Item>
@@ -53,26 +51,10 @@ class SiderMune extends Component {
               <Menu.Item key="8">Team 2</Menu.Item>
             </SubMenu>
             <Menu.Item key="6">
-            <Link to='/avatar'/>
               <span><Icon type="file" /><span>上传文件</span></span>
             </Menu.Item>
           </Menu>
-        </Sider>
-        <Layout>
-          <Content style={{ margin: '0 16px' }}>
-            <Breadcrumb style={{ margin: '16px 0' }}>
-              <Breadcrumb.Item>类别</Breadcrumb.Item>
-              <Breadcrumb.Item>图片</Breadcrumb.Item>
-            </Breadcrumb>
-            <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
-              欢迎min
-            </div>
-          </Content>
-          <Footer style={{ textAlign: 'center' }}>
-            this is min`s network
-          </Footer>
-        </Layout>
-      </Layout>
+        </Sider> 
     );
   }
 }
