@@ -22,3 +22,12 @@
 .upload-demo-start {
   margin-top: 16px;
 }
+.ant-layout-sider{
+  height: -webkit-fill-available;
+}
+.layout-component{
+  width: 1720px;
+  position: absolute;
+  left:200px;
+  top:47px;
+}

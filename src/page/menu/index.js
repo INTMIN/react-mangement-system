@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Layout, Menu, Icon } from 'antd';
+import { Link } from 'react-router-dom';
 import '../../App.css';
 
 
@@ -30,11 +31,11 @@ class SiderMune extends Component {
               <span>文档</span>
             </Menu.Item>
             <Menu.Item key="2">
-            
+            <Link to='./picture'>
             <Icon type="picture" theme="outlined" />
-              <span>图片</span>
+              <span>图片</span></Link>
             </Menu.Item>
-           
+            
             <SubMenu
               key="sub1"
               title={<span><Icon type="user" /><span>User</span></span>}
@@ -48,10 +49,11 @@ class SiderMune extends Component {
               title={<span><Icon type="team" /><span>Team</span></span>}
             >
               <Menu.Item key="6">Team 1</Menu.Item>
-              <Menu.Item key="8">Team 2</Menu.Item>
+              <Menu.Item key="7">Team 2</Menu.Item>
             </SubMenu>
-            <Menu.Item key="6">
-              <span><Icon type="file" /><span>上传文件</span></span>
+            <Menu.Item key="8">
+            <Link to='./picture'>
+              <span><Icon type="file" /><span>上传文件</span></span></Link>
             </Menu.Item>
           </Menu>
         </Sider> 
