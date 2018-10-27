@@ -5,7 +5,7 @@ import store from './store';
 import Picture from './page/picture';
 import Avatar from './page/uplode';
 import Home from './page/home';
-import { BrowserRouter, Route, Switch} from 'react-router-dom';
+import { BrowserRouter, Route} from 'react-router-dom';
 
 
 
@@ -14,12 +14,12 @@ class App extends Component {
     return (
       <Provider store={store}>
         <BrowserRouter>
-          <Switch>
-            <Route path='/' component={Home}></Route>
+          <div>
+            <Route exact path='/' component={Home}></Route>
             <Route path='/login' component={Login}></Route>
             <Route path='/picture' component={Picture}></Route>
             <Route path='/avatar' component={Avatar}></Route>
-          </Switch>
+            </div>
         </BrowserRouter>
       </Provider>
     );
